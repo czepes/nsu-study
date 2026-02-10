@@ -1,0 +1,6 @@
+#ifndef CONSTRAINTS_HEADER
+#define CONSTRAINTS_HEADER
+
+#define N 100000
+
+#endif

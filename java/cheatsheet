@@ -1,0 +1,6 @@
+Create project
+$ mvn archetype:generate -DgroupId=com.project.structure -DartifactId=project-name -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5 -DinteractiveMode=false
+Build
+$ mvn package
+Run
+$ java -cp ./target/hello-1.0-SNAPSHOT.jar ru.nsu.hello.App
