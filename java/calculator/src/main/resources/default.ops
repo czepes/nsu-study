@@ -1,0 +1,9 @@
+push ru.nsu.calculator.operations.PushOperation
+pop ru.nsu.calculator.operations.PopOperation
+print ru.nsu.calculator.operations.PrintOperation
+define ru.nsu.calculator.operations.DefineOperation
++ ru.nsu.calculator.operations.SumOperation
+- ru.nsu.calculator.operations.DifOperation
+* ru.nsu.calculator.operations.MulOperation
+/ ru.nsu.calculator.operations.DivOperation
+sqrt ru.nsu.calculator.operations.SqrtOperation
