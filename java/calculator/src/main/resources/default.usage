@@ -1,0 +1,11 @@
+COMMANDS LIST:
+1. # - comment line, ignored
+2. PUSH value : place value on top of the stack
+3. POP value : remove value from top of the stack
+4. +, -, *, / : sum, dif, mul, div operators
+    POP v1, v2; apply the operator; PUSH result
+5. SQRT value : square root operator
+    POP value; calculate square root; PUSH result
+6. PRINT : print top value in the stack
+7. DEFINE alias value : set an alias (alphabetic) for a value
+8. EXIT : exit calculator

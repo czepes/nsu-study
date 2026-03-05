@@ -1,0 +1,274 @@
+2026-03-05 12:50:41.362 [main] INFO  r.n.c.components.OperationFactory - Creating Command Factory
+2026-03-05 12:50:41.366 [main] INFO  r.n.c.components.OperationFactory - Creating Command Factory
+2026-03-05 12:50:41.368 [main] INFO  r.n.c.components.OperationFactory - Creating Command Factory
+2026-03-05 12:50:41.369 [main] INFO  r.n.c.components.ExecutionContext - Creating Execution Context
+2026-03-05 12:50:41.369 [main] INFO  r.n.c.components.ExecutionContext - Execution Context ru.nsu.calculator.components.ExecutionContext@928763c created
+2026-03-05 12:50:41.370 [main] INFO  r.n.c.components.OperationFactory - Creating Command Factory
+2026-03-05 12:50:41.371 [main] INFO  r.n.c.components.OperationFactory - Command Factory ru.nsu.calculator.components.OperationFactory@2f666ebb created
+2026-03-05 12:50:41.371 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'unknown-command '
+2026-03-05 12:50:41.371 [main] INFO  r.n.c.components.OperationFactory - Building command 'unknown-command' of class null
+2026-03-05 12:50:41.372 [main] INFO  r.n.c.components.ExecutionContext - Creating Execution Context
+2026-03-05 12:50:41.372 [main] INFO  r.n.c.components.ExecutionContext - Execution Context ru.nsu.calculator.components.ExecutionContext@57a3e26a created
+2026-03-05 12:50:41.372 [main] INFO  r.n.c.components.OperationFactory - Creating Command Factory
+2026-03-05 12:50:41.372 [main] INFO  r.n.c.components.OperationFactory - Command Factory ru.nsu.calculator.components.OperationFactory@75c56eb9 created
+2026-03-05 12:50:41.372 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'pop '
+2026-03-05 12:50:41.372 [main] INFO  r.n.c.components.OperationFactory - Building command 'pop' of class public ru.nsu.calculator.operations.PopOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.373 [main] INFO  r.n.c.operations.PopOperation - Creating Executable Command
+2026-03-05 12:50:41.373 [main] INFO  r.n.c.operations.PopOperation - Executable Command ru.nsu.calculator.operations.PopOperation@6531a794 created
+2026-03-05 12:50:41.373 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'print '
+2026-03-05 12:50:41.373 [main] INFO  r.n.c.components.OperationFactory - Building command 'print' of class public ru.nsu.calculator.operations.PrintOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.374 [main] INFO  r.n.c.operations.PrintOperation - Creating Executable Command
+2026-03-05 12:50:41.374 [main] INFO  r.n.c.operations.PrintOperation - Executable Command ru.nsu.calculator.operations.PrintOperation@56dc1551 created
+2026-03-05 12:50:41.374 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'sqrt '
+2026-03-05 12:50:41.374 [main] INFO  r.n.c.components.OperationFactory - Building command 'sqrt' of class public ru.nsu.calculator.operations.SqrtOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.374 [main] INFO  r.n.c.operations.SqrtOperation - Creating Executable Command
+2026-03-05 12:50:41.374 [main] INFO  r.n.c.operations.SqrtOperation - Executable Command ru.nsu.calculator.operations.SqrtOperation@102cec62 created
+2026-03-05 12:50:41.374 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'define '
+2026-03-05 12:50:41.374 [main] INFO  r.n.c.components.OperationFactory - Building command 'define' of class public ru.nsu.calculator.operations.DefineOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.374 [main] INFO  r.n.c.operations.DefineOperation - Creating Executable Command
+2026-03-05 12:50:41.374 [main] INFO  r.n.c.operations.DefineOperation - Executable Command ru.nsu.calculator.operations.DefineOperation@74f6c5d8 created
+2026-03-05 12:50:41.375 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '* '
+2026-03-05 12:50:41.375 [main] INFO  r.n.c.components.OperationFactory - Building command '*' of class public ru.nsu.calculator.operations.MulOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.375 [main] INFO  r.n.c.operations.MulOperation - Creating Executable Command
+2026-03-05 12:50:41.375 [main] INFO  r.n.c.operations.MulOperation - Executable Command ru.nsu.calculator.operations.MulOperation@27912e3 created
+2026-03-05 12:50:41.375 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '+ '
+2026-03-05 12:50:41.375 [main] INFO  r.n.c.components.OperationFactory - Building command '+' of class public ru.nsu.calculator.operations.SumOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.375 [main] INFO  r.n.c.operations.SumOperation - Creating Executable Command
+2026-03-05 12:50:41.375 [main] INFO  r.n.c.operations.SumOperation - Executable Command ru.nsu.calculator.operations.SumOperation@34b9f960 created
+2026-03-05 12:50:41.375 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '- '
+2026-03-05 12:50:41.375 [main] INFO  r.n.c.components.OperationFactory - Building command '-' of class public ru.nsu.calculator.operations.DifOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.375 [main] INFO  r.n.c.operations.DifOperation - Creating Executable Command
+2026-03-05 12:50:41.375 [main] INFO  r.n.c.operations.DifOperation - Executable Command ru.nsu.calculator.operations.DifOperation@43015c69 created
+2026-03-05 12:50:41.376 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'push '
+2026-03-05 12:50:41.376 [main] INFO  r.n.c.components.OperationFactory - Building command 'push' of class public ru.nsu.calculator.operations.PushOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.376 [main] INFO  r.n.c.operations.PushOperation - Creating Executable Command
+2026-03-05 12:50:41.376 [main] INFO  r.n.c.operations.PushOperation - Executable Command ru.nsu.calculator.operations.PushOperation@19b89d4 created
+2026-03-05 12:50:41.376 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '/ '
+2026-03-05 12:50:41.376 [main] INFO  r.n.c.components.OperationFactory - Building command '/' of class public ru.nsu.calculator.operations.DivOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.376 [main] INFO  r.n.c.operations.DivOperation - Creating Executable Command
+2026-03-05 12:50:41.376 [main] INFO  r.n.c.operations.DivOperation - Executable Command ru.nsu.calculator.operations.DivOperation@4bbf6d0e created
+2026-03-05 12:50:41.384 [main] INFO  r.n.c.components.ExecutionContext - Creating Execution Context
+2026-03-05 12:50:41.384 [main] INFO  r.n.c.components.ExecutionContext - Execution Context ru.nsu.calculator.components.ExecutionContext@2e32ccc5 created
+2026-03-05 12:50:41.384 [main] INFO  r.n.c.components.OperationFactory - Creating Command Factory
+2026-03-05 12:50:41.385 [main] INFO  r.n.c.components.OperationFactory - Command Factory ru.nsu.calculator.components.OperationFactory@748741cb created
+2026-03-05 12:50:41.385 [main] INFO  ru.nsu.calculator.Calculator - Creating Calculator
+2026-03-05 12:50:41.385 [main] INFO  ru.nsu.calculator.Calculator - Calculator ru.nsu.calculator.Calculator@295cf707 created
+2026-03-05 12:50:41.385 [main] INFO  ru.nsu.calculator.Calculator - Execute 'push '
+2026-03-05 12:50:41.386 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'push '
+2026-03-05 12:50:41.386 [main] INFO  r.n.c.components.OperationFactory - Building command 'push' of class public ru.nsu.calculator.operations.PushOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.386 [main] INFO  r.n.c.operations.PushOperation - Creating Executable Command
+2026-03-05 12:50:41.386 [main] INFO  r.n.c.operations.PushOperation - Executable Command ru.nsu.calculator.operations.PushOperation@463fd068 created
+2026-03-05 12:50:41.386 [main] INFO  r.n.c.operations.PushOperation - Execute 'push '
+2026-03-05 12:50:41.387 [main] INFO  ru.nsu.calculator.Calculator - Execute 'pop '
+2026-03-05 12:50:41.387 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'pop '
+2026-03-05 12:50:41.387 [main] INFO  r.n.c.components.OperationFactory - Building command 'pop' of class public ru.nsu.calculator.operations.PopOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.387 [main] INFO  r.n.c.operations.PopOperation - Creating Executable Command
+2026-03-05 12:50:41.387 [main] INFO  r.n.c.operations.PopOperation - Executable Command ru.nsu.calculator.operations.PopOperation@42b3b079 created
+2026-03-05 12:50:41.387 [main] INFO  r.n.c.operations.PopOperation - Execute 'pop '
+2026-03-05 12:50:41.387 [main] INFO  ru.nsu.calculator.Calculator - Execute 'define '
+2026-03-05 12:50:41.387 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'define '
+2026-03-05 12:50:41.387 [main] INFO  r.n.c.components.OperationFactory - Building command 'define' of class public ru.nsu.calculator.operations.DefineOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.388 [main] INFO  r.n.c.operations.DefineOperation - Creating Executable Command
+2026-03-05 12:50:41.388 [main] INFO  r.n.c.operations.DefineOperation - Executable Command ru.nsu.calculator.operations.DefineOperation@bb9e6dc created
+2026-03-05 12:50:41.388 [main] INFO  r.n.c.operations.DefineOperation - Execute 'define '
+2026-03-05 12:50:41.388 [main] INFO  ru.nsu.calculator.Calculator - Execute 'define a'
+2026-03-05 12:50:41.388 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'define a'
+2026-03-05 12:50:41.388 [main] INFO  r.n.c.components.OperationFactory - Building command 'define' of class public ru.nsu.calculator.operations.DefineOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.388 [main] INFO  r.n.c.operations.DefineOperation - Creating Executable Command
+2026-03-05 12:50:41.388 [main] INFO  r.n.c.operations.DefineOperation - Executable Command ru.nsu.calculator.operations.DefineOperation@6692b6c6 created
+2026-03-05 12:50:41.388 [main] INFO  r.n.c.operations.DefineOperation - Execute 'define a'
+2026-03-05 12:50:41.388 [main] INFO  ru.nsu.calculator.Calculator - Execute 'define 0'
+2026-03-05 12:50:41.389 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'define 0'
+2026-03-05 12:50:41.389 [main] INFO  r.n.c.components.OperationFactory - Building command 'define' of class public ru.nsu.calculator.operations.DefineOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.389 [main] INFO  r.n.c.operations.DefineOperation - Creating Executable Command
+2026-03-05 12:50:41.389 [main] INFO  r.n.c.operations.DefineOperation - Executable Command ru.nsu.calculator.operations.DefineOperation@589da3f3 created
+2026-03-05 12:50:41.389 [main] INFO  r.n.c.operations.DefineOperation - Execute 'define 0'
+2026-03-05 12:50:41.389 [main] INFO  ru.nsu.calculator.Calculator - Execute 'define ʕ·͡ᴥ·ʔ 0'
+2026-03-05 12:50:41.389 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'define ʕ·͡ᴥ·ʔ 0'
+2026-03-05 12:50:41.389 [main] INFO  r.n.c.components.OperationFactory - Building command 'define' of class public ru.nsu.calculator.operations.DefineOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.389 [main] INFO  r.n.c.operations.DefineOperation - Creating Executable Command
+2026-03-05 12:50:41.389 [main] INFO  r.n.c.operations.DefineOperation - Executable Command ru.nsu.calculator.operations.DefineOperation@4a00d9cf created
+2026-03-05 12:50:41.390 [main] INFO  r.n.c.operations.DefineOperation - Execute 'define ʕ·͡ᴥ·ʔ 0'
+2026-03-05 12:50:41.391 [main] INFO  ru.nsu.calculator.Calculator - Execute 'define 0 0'
+2026-03-05 12:50:41.391 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'define 0 0'
+2026-03-05 12:50:41.391 [main] INFO  r.n.c.components.OperationFactory - Building command 'define' of class public ru.nsu.calculator.operations.DefineOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.391 [main] INFO  r.n.c.operations.DefineOperation - Creating Executable Command
+2026-03-05 12:50:41.391 [main] INFO  r.n.c.operations.DefineOperation - Executable Command ru.nsu.calculator.operations.DefineOperation@20d7d6fb created
+2026-03-05 12:50:41.391 [main] INFO  r.n.c.operations.DefineOperation - Execute 'define 0 0'
+2026-03-05 12:50:41.392 [main] INFO  ru.nsu.calculator.Calculator - Execute 'print '
+2026-03-05 12:50:41.392 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'print '
+2026-03-05 12:50:41.392 [main] INFO  r.n.c.components.OperationFactory - Building command 'print' of class public ru.nsu.calculator.operations.PrintOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.392 [main] INFO  r.n.c.operations.PrintOperation - Creating Executable Command
+2026-03-05 12:50:41.392 [main] INFO  r.n.c.operations.PrintOperation - Executable Command ru.nsu.calculator.operations.PrintOperation@479cbee5 created
+2026-03-05 12:50:41.392 [main] INFO  r.n.c.operations.PrintOperation - Execute 'print '
+2026-03-05 12:50:41.393 [main] INFO  ru.nsu.calculator.Calculator - Execute 'sqrt '
+2026-03-05 12:50:41.393 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'sqrt '
+2026-03-05 12:50:41.393 [main] INFO  r.n.c.components.OperationFactory - Building command 'sqrt' of class public ru.nsu.calculator.operations.SqrtOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.393 [main] INFO  r.n.c.operations.SqrtOperation - Creating Executable Command
+2026-03-05 12:50:41.393 [main] INFO  r.n.c.operations.SqrtOperation - Executable Command ru.nsu.calculator.operations.SqrtOperation@2b72cb8a created
+2026-03-05 12:50:41.393 [main] INFO  r.n.c.operations.SqrtOperation - Execute 'sqrt '
+2026-03-05 12:50:41.393 [main] INFO  r.n.c.operations.SqrtOperation - Execute 'sqrt '
+2026-03-05 12:50:41.393 [main] INFO  ru.nsu.calculator.Calculator - Execute '+ '
+2026-03-05 12:50:41.393 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '+ '
+2026-03-05 12:50:41.393 [main] INFO  r.n.c.components.OperationFactory - Building command '+' of class public ru.nsu.calculator.operations.SumOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.393 [main] INFO  r.n.c.operations.SumOperation - Creating Executable Command
+2026-03-05 12:50:41.393 [main] INFO  r.n.c.operations.SumOperation - Executable Command ru.nsu.calculator.operations.SumOperation@5d43661b created
+2026-03-05 12:50:41.394 [main] INFO  r.n.c.operations.SumOperation - Execute '+ '
+2026-03-05 12:50:41.394 [main] INFO  ru.nsu.calculator.Calculator - Execute '- '
+2026-03-05 12:50:41.394 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '- '
+2026-03-05 12:50:41.394 [main] INFO  r.n.c.components.OperationFactory - Building command '-' of class public ru.nsu.calculator.operations.DifOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.394 [main] INFO  r.n.c.operations.DifOperation - Creating Executable Command
+2026-03-05 12:50:41.394 [main] INFO  r.n.c.operations.DifOperation - Executable Command ru.nsu.calculator.operations.DifOperation@2fba3fc4 created
+2026-03-05 12:50:41.394 [main] INFO  r.n.c.operations.DifOperation - Execute '- '
+2026-03-05 12:50:41.394 [main] INFO  ru.nsu.calculator.Calculator - Execute '/ '
+2026-03-05 12:50:41.395 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '/ '
+2026-03-05 12:50:41.395 [main] INFO  r.n.c.components.OperationFactory - Building command '/' of class public ru.nsu.calculator.operations.DivOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.395 [main] INFO  r.n.c.operations.DivOperation - Creating Executable Command
+2026-03-05 12:50:41.395 [main] INFO  r.n.c.operations.DivOperation - Executable Command ru.nsu.calculator.operations.DivOperation@420a85c4 created
+2026-03-05 12:50:41.395 [main] INFO  r.n.c.operations.DivOperation - Execute '/ '
+2026-03-05 12:50:41.395 [main] INFO  ru.nsu.calculator.Calculator - Execute '* '
+2026-03-05 12:50:41.395 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '* '
+2026-03-05 12:50:41.396 [main] INFO  r.n.c.components.OperationFactory - Building command '*' of class public ru.nsu.calculator.operations.MulOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.396 [main] INFO  r.n.c.operations.MulOperation - Creating Executable Command
+2026-03-05 12:50:41.396 [main] INFO  r.n.c.operations.MulOperation - Executable Command ru.nsu.calculator.operations.MulOperation@62833051 created
+2026-03-05 12:50:41.396 [main] INFO  r.n.c.operations.MulOperation - Execute '* '
+2026-03-05 12:50:41.396 [main] INFO  ru.nsu.calculator.Calculator - Execute 'push 1'
+2026-03-05 12:50:41.396 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'push 1'
+2026-03-05 12:50:41.396 [main] INFO  r.n.c.components.OperationFactory - Building command 'push' of class public ru.nsu.calculator.operations.PushOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.396 [main] INFO  r.n.c.operations.PushOperation - Creating Executable Command
+2026-03-05 12:50:41.396 [main] INFO  r.n.c.operations.PushOperation - Executable Command ru.nsu.calculator.operations.PushOperation@1c852c0f created
+2026-03-05 12:50:41.396 [main] INFO  r.n.c.operations.PushOperation - Execute 'push 1'
+2026-03-05 12:50:41.397 [main] INFO  ru.nsu.calculator.Calculator - Execute 'pop '
+2026-03-05 12:50:41.397 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'pop '
+2026-03-05 12:50:41.397 [main] INFO  r.n.c.components.OperationFactory - Building command 'pop' of class public ru.nsu.calculator.operations.PopOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.397 [main] INFO  r.n.c.operations.PopOperation - Creating Executable Command
+2026-03-05 12:50:41.397 [main] INFO  r.n.c.operations.PopOperation - Executable Command ru.nsu.calculator.operations.PopOperation@a82c5f1 created
+2026-03-05 12:50:41.397 [main] INFO  r.n.c.operations.PopOperation - Execute 'pop '
+2026-03-05 12:50:41.397 [main] INFO  ru.nsu.calculator.Calculator - Execute 'push 1'
+2026-03-05 12:50:41.397 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'push 1'
+2026-03-05 12:50:41.397 [main] INFO  r.n.c.components.OperationFactory - Building command 'push' of class public ru.nsu.calculator.operations.PushOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.397 [main] INFO  r.n.c.operations.PushOperation - Creating Executable Command
+2026-03-05 12:50:41.397 [main] INFO  r.n.c.operations.PushOperation - Executable Command ru.nsu.calculator.operations.PushOperation@7b7fdc8 created
+2026-03-05 12:50:41.397 [main] INFO  r.n.c.operations.PushOperation - Execute 'push 1'
+2026-03-05 12:50:41.397 [main] INFO  ru.nsu.calculator.Calculator - Execute 'push 1'
+2026-03-05 12:50:41.397 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'push 1'
+2026-03-05 12:50:41.397 [main] INFO  r.n.c.components.OperationFactory - Building command 'push' of class public ru.nsu.calculator.operations.PushOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.397 [main] INFO  r.n.c.operations.PushOperation - Creating Executable Command
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.operations.PushOperation - Executable Command ru.nsu.calculator.operations.PushOperation@51c693d created
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.operations.PushOperation - Execute 'push 1'
+2026-03-05 12:50:41.398 [main] INFO  ru.nsu.calculator.Calculator - Execute '+ '
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '+ '
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.components.OperationFactory - Building command '+' of class public ru.nsu.calculator.operations.SumOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.operations.SumOperation - Creating Executable Command
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.operations.SumOperation - Executable Command ru.nsu.calculator.operations.SumOperation@6a57ae10 created
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.operations.SumOperation - Execute '+ '
+2026-03-05 12:50:41.398 [main] INFO  ru.nsu.calculator.Calculator - Execute 'push 1'
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'push 1'
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.components.OperationFactory - Building command 'push' of class public ru.nsu.calculator.operations.PushOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.operations.PushOperation - Creating Executable Command
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.operations.PushOperation - Executable Command ru.nsu.calculator.operations.PushOperation@766653e6 created
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.operations.PushOperation - Execute 'push 1'
+2026-03-05 12:50:41.398 [main] INFO  ru.nsu.calculator.Calculator - Execute '- '
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '- '
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.components.OperationFactory - Building command '-' of class public ru.nsu.calculator.operations.DifOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.operations.DifOperation - Creating Executable Command
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.operations.DifOperation - Executable Command ru.nsu.calculator.operations.DifOperation@4e07b95f created
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.operations.DifOperation - Execute '- '
+2026-03-05 12:50:41.398 [main] INFO  ru.nsu.calculator.Calculator - Execute 'push 16'
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'push 16'
+2026-03-05 12:50:41.398 [main] INFO  r.n.c.components.OperationFactory - Building command 'push' of class public ru.nsu.calculator.operations.PushOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.399 [main] INFO  r.n.c.operations.PushOperation - Creating Executable Command
+2026-03-05 12:50:41.399 [main] INFO  r.n.c.operations.PushOperation - Executable Command ru.nsu.calculator.operations.PushOperation@28b46423 created
+2026-03-05 12:50:41.399 [main] INFO  r.n.c.operations.PushOperation - Execute 'push 16'
+2026-03-05 12:50:41.399 [main] INFO  ru.nsu.calculator.Calculator - Execute '* '
+2026-03-05 12:50:41.399 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '* '
+2026-03-05 12:50:41.399 [main] INFO  r.n.c.components.OperationFactory - Building command '*' of class public ru.nsu.calculator.operations.MulOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.399 [main] INFO  r.n.c.operations.MulOperation - Creating Executable Command
+2026-03-05 12:50:41.399 [main] INFO  r.n.c.operations.MulOperation - Executable Command ru.nsu.calculator.operations.MulOperation@7fc4780b created
+2026-03-05 12:50:41.399 [main] INFO  r.n.c.operations.MulOperation - Execute '* '
+2026-03-05 12:50:41.399 [main] INFO  ru.nsu.calculator.Calculator - Execute 'push 0'
+2026-03-05 12:50:41.399 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'push 0'
+2026-03-05 12:50:41.399 [main] INFO  r.n.c.components.OperationFactory - Building command 'push' of class public ru.nsu.calculator.operations.PushOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.399 [main] INFO  r.n.c.operations.PushOperation - Creating Executable Command
+2026-03-05 12:50:41.399 [main] INFO  r.n.c.operations.PushOperation - Executable Command ru.nsu.calculator.operations.PushOperation@3b79fd76 created
+2026-03-05 12:50:41.399 [main] INFO  r.n.c.operations.PushOperation - Execute 'push 0'
+2026-03-05 12:50:41.399 [main] INFO  ru.nsu.calculator.Calculator - Execute '/ '
+2026-03-05 12:50:41.400 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '/ '
+2026-03-05 12:50:41.400 [main] INFO  r.n.c.components.OperationFactory - Building command '/' of class public ru.nsu.calculator.operations.DivOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.400 [main] INFO  r.n.c.operations.DivOperation - Creating Executable Command
+2026-03-05 12:50:41.400 [main] INFO  r.n.c.operations.DivOperation - Executable Command ru.nsu.calculator.operations.DivOperation@43599640 created
+2026-03-05 12:50:41.400 [main] INFO  r.n.c.operations.DivOperation - Execute '/ '
+2026-03-05 12:50:41.400 [main] INFO  ru.nsu.calculator.Calculator - Execute 'pop '
+2026-03-05 12:50:41.400 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'pop '
+2026-03-05 12:50:41.400 [main] INFO  r.n.c.components.OperationFactory - Building command 'pop' of class public ru.nsu.calculator.operations.PopOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.400 [main] INFO  r.n.c.operations.PopOperation - Creating Executable Command
+2026-03-05 12:50:41.400 [main] INFO  r.n.c.operations.PopOperation - Executable Command ru.nsu.calculator.operations.PopOperation@1863d2fe created
+2026-03-05 12:50:41.400 [main] INFO  r.n.c.operations.PopOperation - Execute 'pop '
+2026-03-05 12:50:41.400 [main] INFO  ru.nsu.calculator.Calculator - Execute 'push 4'
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'push 4'
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.components.OperationFactory - Building command 'push' of class public ru.nsu.calculator.operations.PushOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.operations.PushOperation - Creating Executable Command
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.operations.PushOperation - Executable Command ru.nsu.calculator.operations.PushOperation@1787bc24 created
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.operations.PushOperation - Execute 'push 4'
+2026-03-05 12:50:41.401 [main] INFO  ru.nsu.calculator.Calculator - Execute '/ '
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '/ '
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.components.OperationFactory - Building command '/' of class public ru.nsu.calculator.operations.DivOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.operations.DivOperation - Creating Executable Command
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.operations.DivOperation - Executable Command ru.nsu.calculator.operations.DivOperation@544d57e created
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.operations.DivOperation - Execute '/ '
+2026-03-05 12:50:41.401 [main] INFO  ru.nsu.calculator.Calculator - Execute 'sqrt '
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'sqrt '
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.components.OperationFactory - Building command 'sqrt' of class public ru.nsu.calculator.operations.SqrtOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.operations.SqrtOperation - Creating Executable Command
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.operations.SqrtOperation - Executable Command ru.nsu.calculator.operations.SqrtOperation@55c53a33 created
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.operations.SqrtOperation - Execute 'sqrt '
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.operations.SqrtOperation - Execute 'sqrt '
+2026-03-05 12:50:41.401 [main] INFO  ru.nsu.calculator.Calculator - Execute 'push -1'
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'push -1'
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.components.OperationFactory - Building command 'push' of class public ru.nsu.calculator.operations.PushOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.operations.PushOperation - Creating Executable Command
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.operations.PushOperation - Executable Command ru.nsu.calculator.operations.PushOperation@53b7f657 created
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.operations.PushOperation - Execute 'push -1'
+2026-03-05 12:50:41.401 [main] INFO  ru.nsu.calculator.Calculator - Execute '* '
+2026-03-05 12:50:41.401 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '* '
+2026-03-05 12:50:41.402 [main] INFO  r.n.c.components.OperationFactory - Building command '*' of class public ru.nsu.calculator.operations.MulOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.402 [main] INFO  r.n.c.operations.MulOperation - Creating Executable Command
+2026-03-05 12:50:41.402 [main] INFO  r.n.c.operations.MulOperation - Executable Command ru.nsu.calculator.operations.MulOperation@797b0699 created
+2026-03-05 12:50:41.402 [main] INFO  r.n.c.operations.MulOperation - Execute '* '
+2026-03-05 12:50:41.402 [main] INFO  ru.nsu.calculator.Calculator - Execute 'sqrt '
+2026-03-05 12:50:41.402 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'sqrt '
+2026-03-05 12:50:41.402 [main] INFO  r.n.c.components.OperationFactory - Building command 'sqrt' of class public ru.nsu.calculator.operations.SqrtOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.402 [main] INFO  r.n.c.operations.SqrtOperation - Creating Executable Command
+2026-03-05 12:50:41.402 [main] INFO  r.n.c.operations.SqrtOperation - Executable Command ru.nsu.calculator.operations.SqrtOperation@26df6e3a created
+2026-03-05 12:50:41.402 [main] INFO  r.n.c.operations.SqrtOperation - Execute 'sqrt '
+2026-03-05 12:50:41.402 [main] INFO  r.n.c.operations.SqrtOperation - Execute 'sqrt '
+2026-03-05 12:50:41.402 [main] INFO  ru.nsu.calculator.Calculator - Execute 'define two 2'
+2026-03-05 12:50:41.402 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'define two 2'
+2026-03-05 12:50:41.402 [main] INFO  r.n.c.components.OperationFactory - Building command 'define' of class public ru.nsu.calculator.operations.DefineOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.403 [main] INFO  r.n.c.operations.DefineOperation - Creating Executable Command
+2026-03-05 12:50:41.403 [main] INFO  r.n.c.operations.DefineOperation - Executable Command ru.nsu.calculator.operations.DefineOperation@6b58b9e9 created
+2026-03-05 12:50:41.403 [main] INFO  r.n.c.operations.DefineOperation - Execute 'define two 2'
+2026-03-05 12:50:41.403 [main] INFO  ru.nsu.calculator.Calculator - Execute 'push two'
+2026-03-05 12:50:41.403 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with 'push two'
+2026-03-05 12:50:41.403 [main] INFO  r.n.c.components.OperationFactory - Building command 'push' of class public ru.nsu.calculator.operations.PushOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.403 [main] INFO  r.n.c.operations.PushOperation - Creating Executable Command
+2026-03-05 12:50:41.403 [main] INFO  r.n.c.operations.PushOperation - Executable Command ru.nsu.calculator.operations.PushOperation@f14a7d4 created
+2026-03-05 12:50:41.403 [main] INFO  r.n.c.operations.PushOperation - Execute 'push two'
+2026-03-05 12:50:41.403 [main] INFO  ru.nsu.calculator.Calculator - Execute '+ '
+2026-03-05 12:50:41.403 [main] INFO  r.n.c.components.ExecutionContext - Context command updated with '+ '
+2026-03-05 12:50:41.403 [main] INFO  r.n.c.components.OperationFactory - Building command '+' of class public ru.nsu.calculator.operations.SumOperation(ru.nsu.calculator.components.ExecutionContext)
+2026-03-05 12:50:41.403 [main] INFO  r.n.c.operations.SumOperation - Creating Executable Command
+2026-03-05 12:50:41.403 [main] INFO  r.n.c.operations.SumOperation - Executable Command ru.nsu.calculator.operations.SumOperation@52e7a6b2 created
+2026-03-05 12:50:41.403 [main] INFO  r.n.c.operations.SumOperation - Execute '+ '
+2026-03-05 12:50:41.406 [main] INFO  r.n.c.components.CommandReader - Creating Command Reader with file ./data/no-file.calc
+2026-03-05 12:50:41.406 [main] INFO  r.n.c.components.CommandReader - Creating Command Reader with file ./data/almost-empty.calc
+2026-03-05 12:50:41.406 [main] INFO  r.n.c.components.CommandReader - Command Reader ru.nsu.calculator.components.CommandReader@27e47833 created
+2026-03-05 12:50:41.406 [main] INFO  r.n.c.components.CommandReader - Reading next line
+2026-03-05 12:50:41.406 [main] INFO  r.n.c.components.CommandReader - Reading next line
+2026-03-05 12:50:41.406 [main] INFO  r.n.c.components.CommandReader - Creating Command Reader with file ./data/sum.calc
+2026-03-05 12:50:41.407 [main] INFO  r.n.c.components.CommandReader - Command Reader ru.nsu.calculator.components.CommandReader@27508c5d created
+2026-03-05 12:50:41.407 [main] INFO  r.n.c.components.CommandReader - Reading next line
+2026-03-05 12:50:41.407 [main] INFO  r.n.c.components.CommandReader - Reading next line
+2026-03-05 12:50:41.407 [main] INFO  r.n.c.components.CommandReader - Reading next line
+2026-03-05 12:50:41.407 [main] INFO  r.n.c.components.CommandReader - Reading next line
+2026-03-05 12:50:41.407 [main] INFO  r.n.c.components.CommandReader - Reading next line
