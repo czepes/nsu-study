@@ -55,6 +55,7 @@ int main(int argc, char **argv) {
   start = MPI_Wtime();
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   MPI_Comm_size(MPI_COMM_WORLD, &num_procs);
+  Distribution dist = distribute(N, num_procs);
 
   double *A = NULL;
   double *b = NULL;
@@ -64,7 +65,7 @@ int main(int argc, char **argv) {
   double *b_local = NULL;
   double *x_local = NULL;
 
-  Distribution dist;
+  // Distribution dist;
   int local_rows;
 
   // Init
@@ -95,7 +96,7 @@ int main(int argc, char **argv) {
       MPI_Abort(MPI_COMM_WORLD, 1);
     }
 
-    dist = distribute(N, num_procs);
+    // dist = distribute(N, num_procs);
 
     printf("\nDistribution:\n");
     for (int i = 0; i < num_procs; i++) {
@@ -106,26 +107,7 @@ int main(int argc, char **argv) {
     }
   }
 
-  // Sending sendcounts & displs 0 -> all
-  int *sendcounts_rows = NULL;
-  int *displs_rows = NULL;
-  int *sendcounts_matrix = NULL;
-  int *displs_matrix = NULL;
-
-  if (rank == 0) {
-    sendcounts_rows = dist.sendcounts_rows;
-    displs_rows = dist.displs_rows;
-    sendcounts_matrix = dist.sendcounts_matrix;
-    displs_matrix = dist.displs_matrix;
-  } else {
-    sendcounts_rows = malloc(num_procs * sizeof(int));
-    displs_rows = malloc(num_procs * sizeof(int));
-  }
-
-  MPI_Bcast(sendcounts_rows, num_procs, MPI_INT, 0, MPI_COMM_WORLD);
-  MPI_Bcast(displs_rows, num_procs, MPI_INT, 0, MPI_COMM_WORLD);
-
-  local_rows = sendcounts_rows[rank];
+  local_rows = dist.sendcounts_rows[rank];
 
   printf("Process %d: local_rows = %d\n", rank, local_rows);
 
@@ -139,11 +121,11 @@ int main(int argc, char **argv) {
     MPI_Abort(MPI_COMM_WORLD, 1);
   }
 
-  MPI_Scatterv(A, sendcounts_matrix, displs_matrix, MPI_DOUBLE, A_local,
-               local_rows * N, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+  MPI_Scatterv(A, dist.sendcounts_matrix, dist.displs_matrix, MPI_DOUBLE,
+               A_local, local_rows * N, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
-  MPI_Scatterv(b, sendcounts_rows, displs_rows, MPI_DOUBLE, b_local, local_rows,
-               MPI_DOUBLE, 0, MPI_COMM_WORLD);
+  MPI_Scatterv(b, dist.sendcounts_rows, dist.displs_rows, MPI_DOUBLE, b_local,
+               local_rows, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
   double *x_cur_global = malloc(N * sizeof(double));
 
@@ -163,8 +145,9 @@ int main(int argc, char **argv) {
     double *x_next = x_local + next_k * local_rows;
 
     // Gatheing x_local[i] to x[i] all -> all
-    MPI_Allgatherv(x_cur, local_rows, MPI_DOUBLE, x_cur_global, sendcounts_rows,
-                   displs_rows, MPI_DOUBLE, MPI_COMM_WORLD);
+    MPI_Allgatherv(x_cur, local_rows, MPI_DOUBLE, x_cur_global,
+                   dist.sendcounts_rows, dist.displs_rows, MPI_DOUBLE,
+                   MPI_COMM_WORLD);
 
     // Iterational calculations
     double local_delta_sq = 0.0;
@@ -209,7 +192,8 @@ int main(int argc, char **argv) {
   }
 
   MPI_Gatherv(x_local + k * local_rows, local_rows, MPI_DOUBLE, x_final,
-              sendcounts_rows, displs_rows, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+              dist.sendcounts_rows, dist.displs_rows, MPI_DOUBLE, 0,
+              MPI_COMM_WORLD);
 
   end = MPI_Wtime();
 
@@ -217,8 +201,10 @@ int main(int argc, char **argv) {
   free(b_local);
   free(x_local);
   free(x_cur_global);
-  free(sendcounts_rows);
-  free(displs_rows);
+  free(dist.sendcounts_rows);
+  free(dist.sendcounts_matrix);
+  free(dist.displs_rows);
+  free(dist.displs_matrix);
 
   // Results
   if (rank == 0) {
@@ -253,8 +239,6 @@ int main(int argc, char **argv) {
     free(b);
     free(x);
     free(Ax);
-    free(sendcounts_matrix);
-    free(displs_matrix);
     free(x_final);
   }
 
