@@ -1,0 +1,80 @@
+# Problem
+A x B = C
+A[6][6]:
+. . . . . . (0,0)
+. . . . . .
+. . . . . .
+-----------
+. . . . . . (1,0)
+. . . . . .
+. . . . . .
+
+B[6][6]:
+ . . | . . | . .
+ . . | . . | . .
+ . . | . . | . .
+ . . | . . | . .
+ . . | . . | . .
+ . . | . . | . .
+(0,0) (0,1) (0,2)
+
+P[2][3]:
+.  .  . C3 <=> (0,0) (0,1) (0,2) C3
+.  .  . C4 <=> (1,0) (1,1) (1,2) C4
+C0 C1 C2   <=>  C0    C1    C2
+C<n> - custom communication group
+
+C[6][6]:
+(0,0) (0,1) (0,2)
+ . . | . . | . .
+ . . | . . | . .
+ . . | . . | . .
+ ---------------
+ . . | . . | . .
+ . . | . . | . .
+ . . | . . | . .
+(1,0) (1,1) (1,2)
+
+# Solution step by step
+1) (0, 0): gen(A, B)
+
+2) (0, 0): scatter(A) -> (i, 0){C0} -> A_part
+
+3) (i, 0): Bcast(A_part) -> (i, j){C3,C4}
+
+?) scatter(B) (0, j){C3} -> B_part
+| problem: reading matrix by columns => data not vectorized
+| solution: MPI Custom Datatypes
+
+4)
+create_type(for_B)
+| B row: . . . . . .
+| for_B: o o x x x x - take 2 values, skip 4 values
+=> 6 for_B elements will hold 1 column (0, j) of matrix B:
+o o x x x x
+o o x x x x
+o o x x x x
+o o x x x x
+o o x x x x
+o o x x x x
+(*, 0)
+
+5)
+(0, 0):
+  for (k = 1; k < 2; k++) {
+    send(B[?], 6 of for_B, (0, k));
+  }
+(0, j): recv(B_part, MPI_Double, (0, 0), ...)
+
+6)
+(0, i): Bcast(j, i){C0,C1,C2}
+7)
+(i, j): A_part x B_part = C_part
+8)
+(i, j) != (0, 0): send(C_part, 6, MPI_Double) -> (0, 0)
+          (0, 0): for (int i) for (int j) recv(&C[?], 6, for_C)
+
+note:
+(find a way to map MPI_COMM_WORLD <-> (C{3-4}, C{0-2}))
+(using send, recv for B & C because scatter may be hard to use)
+
