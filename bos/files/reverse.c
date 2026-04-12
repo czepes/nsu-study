@@ -235,7 +235,7 @@ int main(int argc, char **argv) {
   printf("Resolved path: '%s'\n", resolved_path);
 
   int length = strlen(resolved_path);
-  if (resolved_path[length - 1] == '/') {
+  if (length > 1 && resolved_path[length - 1] == '/') {
     resolved_path[length - 1] = '\0';
     length--;
   }

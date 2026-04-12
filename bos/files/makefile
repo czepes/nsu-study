@@ -10,10 +10,14 @@ clean:
 	  mkfl prnfl rmfl \
 		mksl prnsl prnslf rmsl \
 		mkhl rmhl \
-		prnmod chmod
+		prnmod chmod \
+		libmanager.so realpath
 
 rm:
 	rm -rf 1rid dir1/2rid dir1/dir2/3rid
+
+realpath: realpath.c
+	$(CC) $^ -o $@
 
 reverse: reverse.c
 	$(CC) $^ -o $@
@@ -21,8 +25,11 @@ reverse: reverse.c
 pagemap: pagemap.c
 	$(CC) $^ -o $@
 
-manager: manager.c
-	$(CC) $^ -o $@
+libmanager.so: libmanager.c
+	$(CC) $^ -fPIC -shared -g -o $@
+
+manager: manager.c libmanager.so
+	LD_RUN_PATH=$(PWD) $(CC) $^ -ldl -g -o $@
 	ln $@ mkdir
 	ln $@ prndir
 	ln $@ rmdir
