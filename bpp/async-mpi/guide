@@ -1,0 +1,85 @@
+MPI: Game of Life
+
+Legend:
+o - alive cell
+
+Rules:
+death = 0-1 u 4-8
+live  = 2-3
+exit then field of Age i = field of Age j
+
+Age 0
+---------------------  -----
+| | | | | | | | | |x|  <- have neighbours in process 2 => Irecv needed, while Irecv checking own neighbours
+---------------------
+| | | | | | | | | | |  0
+---------------------
+| | |o| | | | | | | |
+---------------------
+| | |o| | |o| | |o| |
+---------------------  -----
+| | | | |o| |o| | | |  
+---------------------
+| | | | | | | | | | |  1
+---------------------
+| | | | | | | | | | |
+---------------------  -----
+| | | | | | | |o| | |
+---------------------
+| | | | | | | | | | |  2
+---------------------
+| | |o| | | | | | | |
+---------------------  -----
+->
+Age 1
+---------------------
+| | | | | | | | | | |
+---------------------
+| | | | | | | | | | |
+---------------------
+| | |o| | | | | | | |
+---------------------
+| | |o| | |o| | |o| |
+---------------------
+| | | | |o| |o| | | |
+---------------------
+| | | | | | | | | | |
+---------------------
+| | | | | | | | | | |
+---------------------
+| | | | | | | |o| | |
+---------------------
+| | | | | | | | | | |
+---------------------
+| | |o| | | | | | | |
+---------------------
+
+Async communications:
+     |
+     - Irecv --- Test(=1 request)            - check if async request is finished
+     |\          TestAny(at least 1 request)
+     | \         TestAll(all requests)
+     |  |        TestSome(some requestts)
+Wait{|  |        Wait*                       - wait for async request to finish
+    {| /
+    {|/
+     o
+     |
+
+All reqests must be finished by Test*() == true, MPI_Cancel
+
+-1. Equality to previous Ages -> Equality flags array
+0. Equality flags array communciation (IAlltoAll)
+                                       ^
+                                       rcol
+1. Isend(lower) -> next; Isend(top) -> previous;
+   ^                     ^
+   r[0]                  r[1]
+2. Irecv(lower2) <- next; Irecv(top2) <- previous
+   ^                      ^
+   r[2]                   r[3]
+3. Inner Rules
+4. WaitAll(r)
+5. Outer Rules
+6. Wait(rcol)
+7. End?
