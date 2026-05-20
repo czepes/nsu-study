@@ -1,14 +1,16 @@
-#include <limits.h>
+#include "sysinfo.h"
 #include <stdio.h>
+#include <string.h>
 #include <sys/ptrace.h>
-#include <sys/syscall.h>
 #include <sys/user.h>
 #include <sys/wait.h>
-#include <unistd.h>
-
-#include <linux/ptrace.h>
 
 int main(int argc, char **argv) {
+  if (argc <= 1) {
+    printf("Trace programs syscalls\nUsage: %s /path/to/program\n", argv[0]);
+    return 1;
+  }
+
   pid_t pid = fork();
   switch (pid) {
   case -1:
@@ -20,18 +22,28 @@ int main(int argc, char **argv) {
       return 1;
     }
 
-    execl("./asm", "asmhello", NULL);
-    perror("execl");
+    execv(argv[1], argv + 1);
+    perror("execv");
     return 1;
   }
   default: {
     int status;
-    struct user_regs_struct regs;
-
     waitpid(pid, &status, 0);
+
+    if (WIFEXITED(status)) {
+      fprintf(stderr, "Process exited before tracing\n");
+      return 1;
+    }
+    if (WIFSIGNALED(status)) {
+      fprintf(stderr, "Process terminated before tracing\n");
+      return 1;
+    }
+
     printf("[tracer][##] Trace on\n");
 
     int calls = 0;
+    struct user_regs_struct regs;
+
     while (1) {
       if (ptrace(PTRACE_SYSCALL, pid, NULL, NULL) == -1) {
         perror("SYSCALL");
@@ -41,12 +53,12 @@ int main(int argc, char **argv) {
       waitpid(pid, &status, 0);
 
       if (WIFEXITED(status)) {
-        printf("[tracee][##] Exited with code %d\n", WEXITSTATUS(status));
+        printf("\n[tracee][##] Exited with code %d\n", WEXITSTATUS(status));
         break;
       }
 
       if (WIFSIGNALED(status)) {
-        printf("[tracee][##] Terminated with signal %d\n", WTERMSIG(status));
+        printf("\n[tracee][##] Terminated with signal %d\n", WTERMSIG(status));
         break;
       }
 
@@ -56,17 +68,21 @@ int main(int argc, char **argv) {
           continue;
         }
 
+        unsigned long long ret = regs.rax;
+        int sys_num = regs.orig_rax;
+
         switch (calls % 2) {
         case 0:
-          printf("[tracee][%02d][entry] Syscall %llu\n", calls / 2,
-                 regs.orig_rax);
+          printf("[tracee][%02d] Syscall %s(%d)", calls / 2,
+                 get_syscall_name(sys_num), sys_num);
           break;
         case 1:
-          printf("[tracee][%02d][.exit] Return ", calls / 2);
-          if (regs.rax > UINT_MAX) {
-            printf("0x%llx\n", regs.rax);
+          if (is_err_syscall(sys_num, ret)) {
+            printf(" = %lld (%s)\n", ret, strerror(-ret));
+          } else if (is_ptr_syscall(sys_num)) {
+            printf(" = %p\n", (void *)ret);
           } else {
-            printf("%llu\n", regs.rax);
+            printf(" = %lld\n", ret);
           }
           break;
         }

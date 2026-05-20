@@ -8,7 +8,7 @@ clean:
 		hello-trace uni-trace sys-trace \
 		curl-trace wget-trace index*.html \
 		nolibs nolibs-trace \
-		asm asm-trace trace
+		asm asm-trace trace sysinfo.o
 
 hello: hello.c
 	gcc $^ -o $@
@@ -26,9 +26,11 @@ asm: asmhello.c
 	gcc $^ -o $@
 	strace $(TRACE_FLAGS) -o $@-trace ./$@
 
-trace: trace.c
-	gcc asmhello.c -o asm
-	gcc $< -o $@
+sysinfo.o: sysinfo.c
+	gcc $< -c -o $@
+
+trace: trace.c sysinfo.o
+	gcc $^ -o $@
 
 nolibs: nolibs.c
 	gcc $^ -nostdlib -o $@
