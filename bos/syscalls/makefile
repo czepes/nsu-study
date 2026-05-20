@@ -1,14 +1,14 @@
 TRACE_FLAGS = -N
 .PHONY: all clean
 
-all: hello uni sys asm wget
+all: hello uni sys asm wget trace
 
 clean:
 	rm -f hello uni sys \
 		hello-trace uni-trace sys-trace \
 		curl-trace wget-trace index*.html \
 		nolibs nolibs-trace \
-		asm asm-trace
+		asm asm-trace trace
 
 hello: hello.c
 	gcc $^ -o $@
@@ -25,6 +25,10 @@ sys: syshello.c
 asm: asmhello.c
 	gcc $^ -o $@
 	strace $(TRACE_FLAGS) -o $@-trace ./$@
+
+trace: trace.c
+	gcc asmhello.c -o asm
+	gcc $< -o $@
 
 nolibs: nolibs.c
 	gcc $^ -nostdlib -o $@
