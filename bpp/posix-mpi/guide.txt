@@ -1,0 +1,42 @@
+We have a cluster, it accepts independent tasks.
+Each MPI process is a cluster node.
+// Cluster nodes must implement FIFO interface.
+We want to finish given tasks as fast as possible.
+We have N arrays of tasks. (N >= 3)
+Dividing that array evenly for each process.
+Each task has weight (how much time is needed to complete a task).
+Processes don't know about tasks weight until they begin to work on them.
+If process finishes it's task, it has to request some tasks from other processes:
+    OK: Request 1 task
+  GOOD: Request 50% of tasks
+BETTER: Request 30% of tasks
+  BEST: ???
+min(???) / size
+
+Limits:
+< 3 tasks -> do not request
+[Optional] Worker signals Requester (Conditional Variable)
+
+Each process has several threads:
+Workers: Threads for completing tasks
+  Do_work(tasks);
+Listener: Thread for answering requests
+  MPI_Recv(..., MPI_ANY_SOURCE);
+[Optional] Requester: Thread for requesting tasks from other processes
+
+[Optional] Seperate process:
+[Optional]   Dispatcher: Asks each process how many tasks they have
+[Optional]     Requesters ask Dispatcher for tasks
+
+Threads do different work => OpenMP [x] (SPMD), POSIX_THREADS [v] (MPMD)
+Race of Data: each thread accesses array of tasks
+Synchronization of threads with MUTEX
+[Optional] Conditional variable
+
+Result:
+ Counting global_s = sum of s
+
+
+Task example: (repeat_num ~ weight)
+for i = 0..repeat_num:
+   s += sin(i);
