@@ -156,10 +156,6 @@ int rw_init() {
   *wpid = 0;
 
   sigset_t set = rw_sigset();
-  sigemptyset(&set);
-  sigaddset(&set, SIGSYN);
-  sigaddset(&set, SIGINT);
-  sigaddset(&set, SIGTERM);
   sigprocmask(SIG_BLOCK, &set, NULL);
 
   return 0;
